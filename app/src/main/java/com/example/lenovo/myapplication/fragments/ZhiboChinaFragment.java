@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -33,6 +34,7 @@ import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
 
 import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 
@@ -46,6 +48,12 @@ public class ZhiboChinaFragment extends Fragment implements Iview<ZhiboChina> {
     private ViewPager zhibo_vp;
     private List<ZhiboChina.TablistBean> tablist;
     private String order;
+    private String url1;
+    private String url3;
+    private String url0;
+    private String url2;
+    private String url4;
+    private String url5;
 
     @Nullable
     @Override
@@ -71,30 +79,24 @@ public class ZhiboChinaFragment extends Fragment implements Iview<ZhiboChina> {
         Shouye_Adapter shouye_adapter = new Shouye_Adapter(getFragmentManager(), list);
         zhibo_vp.setAdapter(shouye_adapter);
         zhibo_tab.setupWithViewPager(zhibo_vp);
-        return inflate;
-    }
-
-    @Override
-    public void succeed(ZhiboChina T) {
-        tablist = T.getTablist();
-        for (int i = 0; i < tablist.size(); i++) {
-            zhibo_tab.getTabAt(i).setText(tablist.get(i).getTitle());
-
-
-
-        }
-
-        String url2 = tablist.get(2).getUrl();
-        String url3= tablist.get(3).getUrl();
-        String url4 = tablist.get(4).getUrl();
-        String url5 = tablist.get(5).getUrl();
         zhibo_tab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                switch (tab.getPosition()){
+                switch (tab.getPosition()) {
+                    case 0:
+                        EventBus.getDefault().post(url0);
+                        break;
                     case 1:
-                        String url1 = tablist.get(1).getUrl();
-                        EventBus.getDefault().post(new Mes(url1));
+                        EventBus.getDefault().post(url1);
+                        break;
+                    case 2:
+                        EventBus.getDefault().post(url2);
+                        break;
+                    case 3:
+                        EventBus.getDefault().post(new Mes(url3));
+                        break;
+                    case 4:
+                        EventBus.getDefault().post(url4);
                         break;
                 }
             }
@@ -109,20 +111,32 @@ public class ZhiboChinaFragment extends Fragment implements Iview<ZhiboChina> {
 
             }
         });
+        return inflate;
+    }
+
+    @Override
+    public void succeed(ZhiboChina T) {
+        tablist = T.getTablist();
+        for (int i = 0; i < tablist.size(); i++) {
+            zhibo_tab.getTabAt(i).setText(tablist.get(i).getTitle());
+        }
+        url0 = tablist.get(0).getUrl();
+
+
+        url1 = tablist.get(1).getUrl();
+        url2 = tablist.get(2).getUrl();
+        url3 = tablist.get(3).getUrl();
+
+        url4 = tablist.get(4).getUrl();
+
+        url5 = tablist.get(5).getUrl();
 
 
 
-
-
-        EventBus.getDefault().post(new Mes(url2));
-        EventBus.getDefault().post(new Mes(url3));
-        EventBus.getDefault().post(new Mes(url4));
-        EventBus.getDefault().post(new Mes(url5));
-
-   }
+    }
 
     @Override
     public void faile(Throwable e) {
-        Log.e("TAG",e.toString());
+        Log.e("TAG", e.toString());
     }
 }
