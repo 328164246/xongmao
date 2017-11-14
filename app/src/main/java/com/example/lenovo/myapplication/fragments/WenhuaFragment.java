@@ -11,7 +11,7 @@ import android.widget.ListView;
 
 import com.example.lenovo.myapplication.R;
 import com.example.lenovo.myapplication.adapters.WenhualistivewAdapter;
-import com.example.lenovo.myapplication.beans.GuanchaClass;
+import com.example.lenovo.myapplication.beans.Wenhua;
 import com.example.lenovo.myapplication.concat.Concat;
 import com.example.lenovo.myapplication.presenter.Ipresenter;
 import com.example.lenovo.myapplication.view.Iview;
@@ -24,12 +24,12 @@ import java.util.List;
  * Created by Lenovo on 2017/11/3.
  */
 
-public class WenhuaFragment extends Fragment implements Iview<GuanchaClass> {
+public class WenhuaFragment extends Fragment implements Iview<Wenhua> {
 
     private ListView wenhua_listview;
     private FlyBanner wenhua_flybanner;
-    private List<GuanchaClass.ListBean> list1=new ArrayList<>();
-    private List<GuanchaClass.BigImgBean> bigImg;
+    private List<Wenhua.ListBean> list1=new ArrayList<>();
+    private List<Wenhua.BigImgBean> bigImg;
     private WenhualistivewAdapter wenhualistivewAdapter;
 
     @Nullable
@@ -48,8 +48,8 @@ public class WenhuaFragment extends Fragment implements Iview<GuanchaClass> {
     }
 
     @Override
-    public void succeed(GuanchaClass T) {
-        List<GuanchaClass.ListBean> list = T.getList();
+    public void succeed(Wenhua T) {
+        List<Wenhua.ListBean> list = T.getList();
         list1.addAll(list);
         bigImg = T.getBigImg();
         ArrayList<String> strings = new ArrayList<>();

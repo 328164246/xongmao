@@ -83,12 +83,37 @@ public class ZhiboChinaFragment extends Fragment implements Iview<ZhiboChina> {
 
 
         }
-        String url1 = tablist.get(1).getUrl();
+
         String url2 = tablist.get(2).getUrl();
         String url3= tablist.get(3).getUrl();
         String url4 = tablist.get(4).getUrl();
         String url5 = tablist.get(5).getUrl();
-        EventBus.getDefault().post(new Mes(url1));
+        zhibo_tab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                switch (tab.getPosition()){
+                    case 1:
+                        String url1 = tablist.get(1).getUrl();
+                        EventBus.getDefault().post(new Mes(url1));
+                        break;
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+
+
+
+
         EventBus.getDefault().post(new Mes(url2));
         EventBus.getDefault().post(new Mes(url3));
         EventBus.getDefault().post(new Mes(url4));

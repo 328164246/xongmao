@@ -10,6 +10,7 @@ import android.widget.ListView;
 
 import com.example.lenovo.myapplication.R;
 import com.example.lenovo.myapplication.adapters.ListviewAdapter_Badalin;
+import com.example.lenovo.myapplication.adapters.Myadapter;
 import com.example.lenovo.myapplication.beans.Bakalin;
 import com.example.lenovo.myapplication.eventbus.Mes;
 import com.example.lenovo.myapplication.presenter.Ipresenter;
@@ -33,7 +34,7 @@ public class Badalin extends Fragment implements Iview<Bakalin> {
     private Ipresenter ipresenter;
     private String sy;
     private List<Bakalin.LiveBean> list = new ArrayList<>();
-    private ListviewAdapter_Badalin listviewAdapter_badalin;
+    private Myadapter myadapter;
 
     @Nullable
     @Override
@@ -42,8 +43,8 @@ public class Badalin extends Fragment implements Iview<Bakalin> {
 
         View inflate = inflater.inflate(R.layout.listview, container, false);
         lv_listview = inflate.findViewById(R.id.lv_listview);
-        listviewAdapter_badalin = new ListviewAdapter_Badalin(list, getActivity());
-        lv_listview.setAdapter(listviewAdapter_badalin);
+        myadapter = new Myadapter(getContext(), list, R.layout.jincaiitem);
+        lv_listview.setAdapter(myadapter);
 
         return inflate;
     }
@@ -69,7 +70,8 @@ public class Badalin extends Fragment implements Iview<Bakalin> {
     public void succeed(Bakalin T) {
         List<Bakalin.LiveBean> live = T.getLive();
         list.addAll(live);
-        listviewAdapter_badalin.notifyDataSetChanged();
+        myadapter.notifyDataSetChanged();
+
     }
 
     @Override

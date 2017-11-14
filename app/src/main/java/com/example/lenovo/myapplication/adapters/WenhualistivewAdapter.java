@@ -1,7 +1,6 @@
 package com.example.lenovo.myapplication.adapters;
 
 import android.content.Context;
-import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +10,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.lenovo.myapplication.R;
-import com.example.lenovo.myapplication.beans.GuanchaClass;
+import com.example.lenovo.myapplication.beans.Wenhua;
 
 import java.util.List;
 
@@ -21,9 +20,9 @@ import java.util.List;
 
 public class WenhualistivewAdapter extends BaseAdapter {
     private Context context;
-    private List<GuanchaClass.ListBean> list;
+    private List<Wenhua.ListBean> list;
 
-    public WenhualistivewAdapter(List<GuanchaClass.ListBean> list, Context activity) {
+    public WenhualistivewAdapter(List<Wenhua.ListBean> list, Context activity) {
         this.list=list;
         this.context=activity;
     }

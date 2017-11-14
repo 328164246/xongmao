@@ -6,7 +6,7 @@ import java.util.List;
  * Created by Lenovo on 2017/11/8.
  */
 
-public class GuanchaClass {
+public class Wenhua {
     private List<BigImgBean> bigImg;
     private List<ListBean> list;
 

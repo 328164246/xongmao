@@ -5,13 +5,14 @@
     android:orientation="vertical">
 
     <ImageView
-
+      android:layout_marginTop="1dp"
         android:id="@+id/iv_two"
         android:layout_width="180dp"
         android:layout_height="100dp" />
 
     <TextView
         android:text="111"
+        android:layout_marginTop="1dp"
         android:id="@+id/tv_two"
         android:layout_width="250dp"
         android:layout_height="30dp" />
