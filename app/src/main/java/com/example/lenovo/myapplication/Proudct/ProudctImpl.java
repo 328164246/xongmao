@@ -1,11 +1,8 @@
 package com.example.lenovo.myapplication.Proudct;
 
-import android.content.Context;
 import android.util.Log;
 
 import com.example.lenovo.myapplication.Apiservice.Apiservice;
-import com.example.lenovo.myapplication.Factory.Factory;
-import com.example.lenovo.myapplication.Factory.FactoryImpl;
 import com.example.lenovo.myapplication.model.CallBack;
 import com.example.lenovo.myapplication.utils.RetrofitSetting;
 import com.google.gson.Gson;

@@ -14,8 +14,6 @@ import com.example.lenovo.myapplication.beans.Bean;
 
 import java.util.List;
 
-import static android.R.id.list;
-
 
 /**
  * Created by Lenovo on 2017/11/7.

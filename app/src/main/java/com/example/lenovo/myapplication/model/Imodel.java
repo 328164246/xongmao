@@ -1,7 +1,5 @@
 package com.example.lenovo.myapplication.model;
 
-import android.content.Context;
-
 import java.util.Map;
 
 /**

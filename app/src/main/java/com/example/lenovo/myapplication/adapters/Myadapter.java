@@ -1,7 +1,6 @@
 package com.example.lenovo.myapplication.adapters;
 
 import android.content.Context;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -10,7 +9,6 @@ import com.example.lenovo.myapplication.R;
 import com.example.lenovo.myapplication.baseadapter.CommonAdapter;
 import com.example.lenovo.myapplication.baseadapter.CommonViewHolder;
 import com.example.lenovo.myapplication.beans.Bakalin;
-
 
 import java.util.List;
 

@@ -6,9 +6,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-
-import com.example.lenovo.myapplication.R;
 
 /**
  * Created by Lenovo on 2017/11/9.

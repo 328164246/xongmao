@@ -23,7 +23,6 @@ import com.example.lenovo.myapplication.presenter.Ipresenter;
 import com.example.lenovo.myapplication.utils.VolleyUtils;
 import com.example.lenovo.myapplication.view.Iview;
 import com.google.gson.Gson;
-import com.recker.flybanner.FlyBanner;
 
 import java.util.ArrayList;
 import java.util.List;

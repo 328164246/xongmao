@@ -5,11 +5,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.lenovo.myapplication.R;
-import com.example.lenovo.myapplication.adapters.ListviewAdapter_eight;
 import com.example.lenovo.myapplication.base.baseactivity.BaseActivity;
 
-import static android.R.id.list;
-import static android.os.Build.VERSION_CODES.N;
 import static com.example.lenovo.myapplication.R.layout.listview;
 
 public class Lishi extends BaseActivity {

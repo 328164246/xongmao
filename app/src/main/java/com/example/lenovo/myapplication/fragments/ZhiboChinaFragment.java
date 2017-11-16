@@ -1,42 +1,33 @@
 package com.example.lenovo.myapplication.fragments;
 
 
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+import android.widget.Button;
+import android.widget.PopupWindow;
 
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.example.lenovo.myapplication.R;
 import com.example.lenovo.myapplication.adapters.Shouye_Adapter;
 import com.example.lenovo.myapplication.beans.ZhiboChina;
 import com.example.lenovo.myapplication.concat.Concat;
 import com.example.lenovo.myapplication.eventbus.Mes;
 import com.example.lenovo.myapplication.presenter.Ipresenter;
-import com.example.lenovo.myapplication.utils.VolleyUtils;
 import com.example.lenovo.myapplication.view.Iview;
-
-import com.example.lenovo.myapplication.zhibochinafragments.Emeishan;
-import com.example.lenovo.myapplication.zhibochinafragments.Fenthuangguchen;
 import com.example.lenovo.myapplication.zhibochinafragments.Huangshan;
-import com.example.lenovo.myapplication.zhibochinafragments.Jincai;
-import com.example.lenovo.myapplication.zhibochinafragments.Taishan;
-import com.google.gson.Gson;
 
 import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutorService;
-
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 
 /**
  * Created by Lenovo on 2017/11/3.
@@ -54,15 +45,21 @@ public class ZhiboChinaFragment extends Fragment implements Iview<ZhiboChina> {
     private String url2;
     private String url4;
     private String url5;
+    private Button btn_add;
+    private View inflate;
+    private Button btn_quite;
+    private View popwindow;
+    private PopupWindow pop;
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(final LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         Ipresenter ipresenter = new Ipresenter(this);
         ipresenter.getData(Concat.ZHIBOCHINA_URL, null);
-        View inflate = inflater.inflate(R.layout.zhibochinaview, container, false);
+        inflate = inflater.inflate(R.layout.zhibochinaview, container, false);
         zhibo_tab = inflate.findViewById(R.id.zhibo_tab);
         zhibo_vp = inflate.findViewById(R.id.zhibo_vp);
+        btn_add = inflate.findViewById(R.id.btn_add);
         ArrayList<Fragment> list = new ArrayList<>();
         list.add(new Huangshan());
         list.add(new Huangshan());
@@ -74,6 +71,29 @@ public class ZhiboChinaFragment extends Fragment implements Iview<ZhiboChina> {
         Shouye_Adapter shouye_adapter = new Shouye_Adapter(getFragmentManager(), list);
         zhibo_vp.setAdapter(shouye_adapter);
         zhibo_tab.setupWithViewPager(zhibo_vp);
+        popwindow = LayoutInflater.from(getContext())
+                .inflate(R.layout.pop, null);
+        btn_quite = popwindow.findViewById(R.id.btn_quite);
+        btn_add.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View v) {
+
+
+                pop = new PopupWindow(popwindow, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+                pop.setBackgroundDrawable(new ColorDrawable(0x00000000));
+                pop.showAtLocation(inflate, Gravity.NO_GRAVITY, 0, 0);
+                btn_quite.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        pop.dismiss();
+                    }
+                });
+
+
+            }
+        });
 
         zhibo_tab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

@@ -15,13 +15,10 @@ import com.example.lenovo.myapplication.base.baseactivity.BaseActivity;
 import com.example.lenovo.myapplication.fragments.GuanchaFragment;
 import com.example.lenovo.myapplication.fragments.ShouyeFragment;
 import com.example.lenovo.myapplication.fragments.WenhuaFragment;
-import com.example.lenovo.myapplication.fragments.ZhiboChinaFragment;
 import com.example.lenovo.myapplication.fragments.XongmaoZhiboFragment;
+import com.example.lenovo.myapplication.fragments.ZhiboChinaFragment;
 
 import java.util.ArrayList;
-
-import static android.R.id.list;
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
 
 
 public class Homepage extends BaseActivity {

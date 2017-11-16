@@ -4,12 +4,10 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 
 import com.example.lenovo.myapplication.R;
-import com.example.lenovo.myapplication.base.baseactivity.Abstractactivity;
 
 /**
  * Created by Lenovo on 2017/11/1.

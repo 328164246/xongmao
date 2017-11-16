@@ -1,8 +1,6 @@
 package com.example.lenovo.myapplication.adapters;
 
 import android.content.Context;
-import android.os.Environment;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,11 +9,7 @@ import com.example.lenovo.myapplication.R;
 import com.example.lenovo.myapplication.baseadapter.CommonAdapter;
 import com.example.lenovo.myapplication.baseadapter.CommonViewHolder;
 import com.example.lenovo.myapplication.beans.Guancha;
-import com.example.lenovo.myapplication.beans.Guancha_In;
 
-import java.io.File;
-import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;

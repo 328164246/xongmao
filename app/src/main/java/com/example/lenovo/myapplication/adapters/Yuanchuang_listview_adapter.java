@@ -1,7 +1,6 @@
 package com.example.lenovo.myapplication.adapters;
 
 import android.content.Context;
-import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +13,6 @@ import com.example.lenovo.myapplication.R;
 import com.example.lenovo.myapplication.beans.Yuanchuang_hudong;
 
 import java.util.List;
-
-import static android.R.id.list;
 
 /**
  * Created by Lenovo on 2017/11/5.

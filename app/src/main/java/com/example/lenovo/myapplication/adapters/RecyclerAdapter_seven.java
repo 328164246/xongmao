@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.lenovo.myapplication.R;
-import com.example.lenovo.myapplication.beans.Bean;
 import com.example.lenovo.myapplication.beans.Cctv;
 
 import java.util.List;
