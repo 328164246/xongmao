@@ -10,7 +10,7 @@ import com.example.lenovo.myapplication.R;
 import com.example.lenovo.myapplication.baseadapter.CommonAdapter;
 import com.example.lenovo.myapplication.baseadapter.CommonViewHolder;
 import com.example.lenovo.myapplication.beans.Bakalin;
-import com.example.lenovo.myapplication.zhibochinafragments.Badalin;
+
 
 import java.util.List;
 

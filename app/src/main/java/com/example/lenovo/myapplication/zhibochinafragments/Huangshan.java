@@ -47,7 +47,6 @@ public class Huangshan extends Fragment {
         lv_listview.setAdapter(fu_adapter);
         return inflate;
     }
-
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void get(Mes s) {
         String sy = s.getSy();
@@ -67,6 +66,14 @@ public class Huangshan extends Fragment {
                 Log.e("TAG", error.toString());
             }
         });
+    }
+
+
+    @Override
+    public void onPause() {
+        super.onPause();
+
+        EventBus.getDefault().unregister(this);
     }
 
     @Override

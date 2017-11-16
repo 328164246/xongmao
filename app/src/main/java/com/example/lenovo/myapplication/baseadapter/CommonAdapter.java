@@ -5,8 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-import com.example.lenovo.myapplication.beans.Bakalin;
-import com.example.lenovo.myapplication.zhibochinafragments.Badalin;
+
 
 import java.util.List;
 

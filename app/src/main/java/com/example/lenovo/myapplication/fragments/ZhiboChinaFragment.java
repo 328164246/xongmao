@@ -22,7 +22,7 @@ import com.example.lenovo.myapplication.eventbus.Mes;
 import com.example.lenovo.myapplication.presenter.Ipresenter;
 import com.example.lenovo.myapplication.utils.VolleyUtils;
 import com.example.lenovo.myapplication.view.Iview;
-import com.example.lenovo.myapplication.zhibochinafragments.Badalin;
+
 import com.example.lenovo.myapplication.zhibochinafragments.Emeishan;
 import com.example.lenovo.myapplication.zhibochinafragments.Fenthuangguchen;
 import com.example.lenovo.myapplication.zhibochinafragments.Huangshan;
@@ -64,12 +64,12 @@ public class ZhiboChinaFragment extends Fragment implements Iview<ZhiboChina> {
         zhibo_tab = inflate.findViewById(R.id.zhibo_tab);
         zhibo_vp = inflate.findViewById(R.id.zhibo_vp);
         ArrayList<Fragment> list = new ArrayList<>();
-        list.add(new Jincai());
-        list.add(new Badalin());
-        list.add(new Taishan());
         list.add(new Huangshan());
-        list.add(new Fenthuangguchen());
-        list.add(new Emeishan());
+        list.add(new Huangshan());
+        list.add(new Huangshan());
+        list.add(new Huangshan());
+        list.add(new Huangshan());
+        list.add(new Huangshan());
         zhibo_tab.addTab(zhibo_tab.newTab());
         zhibo_tab.addTab(zhibo_tab.newTab());
         zhibo_tab.addTab(zhibo_tab.newTab());
@@ -84,20 +84,23 @@ public class ZhiboChinaFragment extends Fragment implements Iview<ZhiboChina> {
             public void onTabSelected(TabLayout.Tab tab) {
                 switch (tab.getPosition()) {
                     case 0:
-                        EventBus.getDefault().post(url0);
+                        EventBus.getDefault().post(new Mes(url0));
+                        Log.e("TAG10",url0);
                         break;
                     case 1:
-                        EventBus.getDefault().post(url1);
+                        EventBus.getDefault().post(new Mes(url1));
                         break;
                     case 2:
-                        EventBus.getDefault().post(url2);
+                        EventBus.getDefault().post(new Mes(url2));
                         break;
                     case 3:
                         EventBus.getDefault().post(new Mes(url3));
                         break;
                     case 4:
-                        EventBus.getDefault().post(url4);
+                        EventBus.getDefault().post(new Mes(url4));
                         break;
+                    case 5:
+                        EventBus.getDefault().post(new Mes(url5));
                 }
             }
 
