@@ -71,21 +71,17 @@ public class ZhiboChinaFragment extends Fragment implements Iview<ZhiboChina> {
         list.add(new Huangshan());
         list.add(new Huangshan());
         zhibo_tab.addTab(zhibo_tab.newTab());
-        zhibo_tab.addTab(zhibo_tab.newTab());
-        zhibo_tab.addTab(zhibo_tab.newTab());
-        zhibo_tab.addTab(zhibo_tab.newTab());
-        zhibo_tab.addTab(zhibo_tab.newTab());
-        zhibo_tab.addTab(zhibo_tab.newTab());
         Shouye_Adapter shouye_adapter = new Shouye_Adapter(getFragmentManager(), list);
         zhibo_vp.setAdapter(shouye_adapter);
         zhibo_tab.setupWithViewPager(zhibo_vp);
+
         zhibo_tab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 switch (tab.getPosition()) {
                     case 0:
+
                         EventBus.getDefault().post(new Mes(url0));
-                        Log.e("TAG10",url0);
                         break;
                     case 1:
                         EventBus.getDefault().post(new Mes(url1));
@@ -101,6 +97,7 @@ public class ZhiboChinaFragment extends Fragment implements Iview<ZhiboChina> {
                         break;
                     case 5:
                         EventBus.getDefault().post(new Mes(url5));
+                        break;
                 }
             }
 
@@ -114,6 +111,7 @@ public class ZhiboChinaFragment extends Fragment implements Iview<ZhiboChina> {
 
             }
         });
+
         return inflate;
     }
 
@@ -133,7 +131,11 @@ public class ZhiboChinaFragment extends Fragment implements Iview<ZhiboChina> {
         url4 = tablist.get(4).getUrl();
 
         url5 = tablist.get(5).getUrl();
-
+        //设置默认是显示哪个,并用还要把值传过去,fragmnet中接收值取消注册在pause里面写
+        zhibo_vp.setCurrentItem(0);
+        EventBus.getDefault().post(new Mes(url0));
+        //为了防止隔一个切换不出来数据问题
+        zhibo_vp.setOffscreenPageLimit(9);
 
 
     }

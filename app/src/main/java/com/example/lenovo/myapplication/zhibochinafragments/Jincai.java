@@ -18,10 +18,10 @@ public class Jincai extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View inflate = inflater.inflate(R.layout.jincaiitem, container, false);
-        ImageView jicai_img = inflate.findViewById(R.id.jicai_img);
 
 
-        return inflate;
+
+
+        return null;
     }
 }

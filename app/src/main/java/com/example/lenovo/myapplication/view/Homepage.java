@@ -20,6 +20,7 @@ import com.example.lenovo.myapplication.fragments.XongmaoZhiboFragment;
 
 import java.util.ArrayList;
 
+import static android.R.id.list;
 import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
 
 
@@ -157,6 +158,7 @@ public class Homepage extends BaseActivity {
          startActivity(new Intent(Homepage.this,Person_yuanchuang.class));
             }
         });
+
 
     }
 

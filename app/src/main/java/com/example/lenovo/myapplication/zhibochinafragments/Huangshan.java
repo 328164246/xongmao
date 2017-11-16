@@ -40,24 +40,27 @@ public class Huangshan extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        EventBus.getDefault().register(this);
+
         View inflate = inflater.inflate(R.layout.listview, container, false);
         lv_listview = inflate.findViewById(R.id.lv_listview);
-        fu_adapter = new fu_Adapter(list, getActivity());
-        lv_listview.setAdapter(fu_adapter);
+        EventBus.getDefault().register(this);
+
         return inflate;
     }
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void get(Mes s) {
+
         String sy = s.getSy();
+
         VolleyUtils.getInstance(getActivity()).get(sy, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 String s1 = response.toString();
                 Hangshan hangshan = new Gson().fromJson(s1, Hangshan.class);
                 List<Hangshan.LiveBean> live = hangshan.getLive();
-                list.addAll(live);
-                fu_adapter.notifyDataSetChanged();
+
+                fu_adapter = new fu_Adapter(live, getActivity());
+                lv_listview.setAdapter(fu_adapter);
 
             }
         }, new Response.ErrorListener() {
@@ -72,14 +75,6 @@ public class Huangshan extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
-
-        EventBus.getDefault().unregister(this);
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-
         EventBus.getDefault().unregister(this);
     }
 }
