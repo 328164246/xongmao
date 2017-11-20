@@ -1,6 +1,7 @@
 package com.example.lenovo.myapplication.base.baseactivity;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
@@ -27,6 +28,7 @@ public abstract class BaseActivity extends Abstractactivity {
     private View header1;
     private View body1;
     private View footer1;
+    private Handler handler=new Handler();
     private RelativeLayout footerview;
   //设置显示头布局
     public void setShowHeader(boolean showHeader) {
@@ -187,6 +189,14 @@ public abstract class BaseActivity extends Abstractactivity {
         scrollview = (ScrollView) findViewById(R.id.scrollview);
         resfreshlayout = (RelativeLayout) findViewById(R.id.resfreshlayout);
         swipeview = (SwipeRefreshLayout) findViewById(R.id.swipeview);
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+               if(swipeview.isRefreshing()){
+                   swipeview.setRefreshing(false);
+               }
+            }
+        },200);
         Errorlayout = (RelativeLayout) findViewById(R.id.Errorlayout);
         bodyview = (RelativeLayout) findViewById(R.id.bodyview);
         footerview = (RelativeLayout) findViewById(R.id.footerview);

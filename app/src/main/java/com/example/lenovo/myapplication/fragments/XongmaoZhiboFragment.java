@@ -73,7 +73,7 @@ public class XongmaoZhiboFragment extends Fragment implements Iview<xongmaofragm
             if (i == 0) {
                 list.add(new zhibofragment(tablist.get(i).getUrl()));
             } else {
-                list.add(new zhibo_twofragment());
+                list.add(new zhibo_twofragment(tablist.get(i).getId()));
             }
         }
 

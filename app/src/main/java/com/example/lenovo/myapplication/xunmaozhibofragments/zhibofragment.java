@@ -85,7 +85,7 @@ public class zhibofragment extends Fragment {
                 String url = multiple.get(0).getUrl();
                 ArrayList<Fragment> list = new ArrayList<>();
                 list.add(new DuoFragment(multiple.get(0).getUrl()));
-                list.add(new LookFragment("http://newcomment.cntv.cn/comment/list?prepage=20&app=ipandaApp&itemid=zhiboye_chat&nature=1&page="));
+                list.add(new LookFragment());
                 ArrayList<String> titlelist = new ArrayList<>();
                 titlelist.add(multiple.get(0).getTitle());
                 titlelist.add(watchTalk.get(0).getTitle());

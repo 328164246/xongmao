@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -34,6 +35,7 @@ public class Homepage extends BaseActivity {
     private ImageView home_iv_denglu;
     private TextView logo_tv_title;
     private ImageView logo_img;
+    private SwipeRefreshLayout swipeview;
 
     @Override
     protected void initLayout() {
@@ -70,15 +72,23 @@ public class Homepage extends BaseActivity {
         logo_img = (ImageView) findViewById(R.id.logo_img);
         vp_body = (ViewPager) findViewById(R.id.vp_body);
         logo_tv_title = (TextView) findViewById(R.id.logo_tv_title);
-
+        swipeview = (SwipeRefreshLayout) findViewById(R.id.swipeview);
         tb_footer = (TabLayout) findViewById(R.id.tb_footer);
+
 
     }
 
 
     @Override
     protected void run() {
-
+       swipeview.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+           @Override
+           public void onRefresh() {
+             if(swipeview.isRefreshing()){
+                 swipeview.setRefreshing(false);
+             }
+           }
+       });
 
         ArrayList<Fragment> list = new ArrayList<>();
         list.add(new ShouyeFragment());
