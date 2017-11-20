@@ -15,10 +15,12 @@ import java.util.ArrayList;
 
 public class ZhiboAdapter extends FragmentPagerAdapter {
     private ArrayList<Fragment> list;
+    private ArrayList<String> titlist;
 
-    public ZhiboAdapter(FragmentManager fm, ArrayList<Fragment> list) {
+    public ZhiboAdapter(FragmentManager fm, ArrayList<Fragment> list,ArrayList<String> titlist) {
         super(fm);
         this.list=list;
+        this.titlist=titlist;
     }
 
 
@@ -31,5 +33,10 @@ public class ZhiboAdapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
         return list.size();
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return titlist.get(position);
     }
 }
