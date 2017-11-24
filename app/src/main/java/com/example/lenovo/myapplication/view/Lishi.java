@@ -1,6 +1,8 @@
 package com.example.lenovo.myapplication.view;
 
+import android.content.Intent;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -14,6 +16,7 @@ public class Lishi extends BaseActivity {
 
     private TextView tb_text;
     private ListView lv_listview;
+    private ImageView tb_img;
 
     @Override
     protected void initLayout() {
@@ -40,7 +43,13 @@ public class Lishi extends BaseActivity {
     protected void initviews() {
         tb_text = (TextView) findViewById(R.id.tb_text);
         lv_listview = (ListView) findViewById(R.id.lv_listview);
-
+        tb_img = (ImageView) findViewById(R.id.tb_img);
+        tb_img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Lishi.this,Homepage.class));
+            }
+        });
 
 
     }

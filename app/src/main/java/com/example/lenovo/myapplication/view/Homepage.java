@@ -121,7 +121,7 @@ public class Homepage extends BaseActivity {
         home_iv_denglu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Homepage.this, PersonalActivity.class));
+                startActivity(new Intent(Homepage.this, Person_total.class));
             }
         });
         home_iv_yuanchuang.setOnClickListener(new View.OnClickListener() {

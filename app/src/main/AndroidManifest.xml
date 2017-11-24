@@ -27,8 +27,8 @@
         <activity android:name=".view.Person_yuanchuang" />
         <activity android:name=".view.Lishi" />
         <activity android:name=".view.LoginActivity" />
-        <activity android:name=".view.PersonalActivity" />
-        <activity android:name=".view.Person_setActivity"></activity>
+        <activity android:name=".view.Person_setActivity" />
+        <activity android:name=".view.Person_total"></activity>
     </application>
 
 </manifest>
