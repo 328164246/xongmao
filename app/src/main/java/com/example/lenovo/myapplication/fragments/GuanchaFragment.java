@@ -1,6 +1,7 @@
 package com.example.lenovo.myapplication.fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
@@ -21,6 +23,7 @@ import com.example.lenovo.myapplication.beans.TotalGuancha;
 import com.example.lenovo.myapplication.concat.Concat;
 import com.example.lenovo.myapplication.presenter.Ipresenter;
 import com.example.lenovo.myapplication.utils.VolleyUtils;
+import com.example.lenovo.myapplication.view.ClickVideoActivity;
 import com.example.lenovo.myapplication.view.Iview;
 import com.google.gson.Gson;
 
@@ -36,6 +39,7 @@ public class GuanchaFragment extends Fragment implements Iview<Guancha> {
     private ListView guancha_lv;
     private List<Guancha.ListBean> guanchalist = new ArrayList<>();
     private GuanchaAdapter guanchaAdapter;
+    private ImageView guancha_header_img;
 
     @Nullable
     @Override
@@ -43,24 +47,26 @@ public class GuanchaFragment extends Fragment implements Iview<Guancha> {
         Ipresenter ipresenter = new Ipresenter(this);
         ipresenter.getData(Concat.GUANCHAPANADA,null);
         View inflate = inflater.inflate(R.layout.guanchaitem, container, false);
-        final ImageView guancha_header_img = inflate.findViewById(R.id.guancha_header_img);
+        guancha_header_img = inflate.findViewById(R.id.guancha_header_img);
         VolleyUtils.getInstance(getContext()).get(Concat.TOTALTITLE, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 String s = response.toString();
                 TotalGuancha totalGuancha = new Gson().fromJson(s, TotalGuancha.class);
                 String image = totalGuancha.getTab().get(1).getImage();
-                Glide.with(getActivity()).load(image).into(guancha_header_img);
+
+               Glide.with(getContext()).load(image).into(guancha_header_img);
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+      Log.e("TAG",error.toString());
             }
         });
         guancha_lv = inflate.findViewById(R.id.guancha_lv);
         guanchaAdapter = new GuanchaAdapter(getContext(), guanchalist, R.layout.guancha_listview_item);
         guancha_lv.setAdapter(guanchaAdapter);
+
         return inflate;
     }
 
@@ -70,6 +76,15 @@ public class GuanchaFragment extends Fragment implements Iview<Guancha> {
         List<Guancha.ListBean> list = T.getList();
         guanchalist.addAll(list);
         guanchaAdapter.notifyDataSetChanged();
+        guancha_lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String guid = guanchalist.get(i).getGuid();
+                Intent intent = new Intent(getActivity(),ClickVideoActivity.class);
+                intent.putExtra("id",guid);
+                startActivity(intent);
+            }
+        });
     }
 
 

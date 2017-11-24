@@ -17,11 +17,12 @@
 
         </android.support.design.widget.TabLayout>
 
-        <Button
+        <ImageButton
+
             android:id="@+id/btn_add"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:background="@mipmap/live_china_add" />
+            android:src="@mipmap/live_china_add" />
     </LinearLayout>
 
 

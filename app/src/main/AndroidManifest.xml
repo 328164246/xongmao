@@ -28,7 +28,10 @@
         <activity android:name=".view.Lishi" />
         <activity android:name=".view.LoginActivity" />
         <activity android:name=".view.Person_setActivity" />
-        <activity android:name=".view.Person_total"></activity>
+        <activity android:name=".view.Person_total" />
+        <activity android:name=".view.Person_shoucang" />
+        <activity android:name=".view.ClickVideoActivity"></activity>
+        <activity android:name=".view.Person_find"/>
     </application>
 
 </manifest>

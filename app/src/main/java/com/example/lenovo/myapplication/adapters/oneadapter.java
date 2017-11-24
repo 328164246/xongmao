@@ -36,7 +36,7 @@ public class oneadapter extends RecyclerView.Adapter {
     private Context context;
     private ArrayList<String> strings;
     private List<Bean.DataBean.BigImgBean> bigImg;
-    private List<Bean.DataBean.AreaBean.ListscrollBean> listscroll;
+    public List<Bean.DataBean.AreaBean.ListscrollBean> listscroll;
     private List<Bean.DataBean.PandaeyeBean.ItemsBean> items;
     private List<Bean.DataBean.PandaliveBean.ListBean> list;
     private List<Bean.DataBean.WallliveBean.ListBeanX> listwall;
@@ -49,13 +49,40 @@ public class oneadapter extends RecyclerView.Adapter {
     private String pandaeyelist;
     private String listUrl;
     private Bean.DataBean.ListBeanXXX listBeanXXX;
-
     public oneadapter(Bean.DataBean data, Context context) {
 
         this.data = data;
         this.context = context;
 
     }
+
+    public interface Onitemclick{
+         void setonclickitem(String url);
+    }
+    public static Onitemclick onclickitem;
+    public void set(Onitemclick onclickitem){
+        this.onclickitem=onclickitem;
+    }
+/*
+* 轮播图
+* "http://115.182.9.189/api/getVideoInfoForCBox.do?pid=" + pid
+* 其它点击事件:
+* "http://vdn.apps.cntv.cn/api/getVideoInfoForCBox.do?pid="+pid
+*
+* */
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -282,7 +309,7 @@ public class oneadapter extends RecyclerView.Adapter {
     }
 
 
-    public static class ViewHolder1 extends RecyclerView.ViewHolder {
+    public class ViewHolder1 extends RecyclerView.ViewHolder {
         public View rootView;
         public ImageView one_img;
         public TextView one_tv;
@@ -294,6 +321,8 @@ public class oneadapter extends RecyclerView.Adapter {
             this.one_img = (ImageView) rootView.findViewById(R.id.one_img);
             this.one_tv = (TextView) rootView.findViewById(R.id.one_tv);
             this.one_rcv = (RecyclerView) rootView.findViewById(R.id.one_rcv);
+
+
         }
 
     }

@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,7 +42,8 @@ public class zhibofragment extends Fragment {
     private TextView fu_tv_content;
     private TabLayout tb_xongmaozhibo;
     private ViewPager vp_xongmaozhibo;
-     private int i=1;
+    private int i = 1;
+
     public zhibofragment(String url) {
         this.url = url;
 
@@ -64,12 +66,12 @@ public class zhibofragment extends Fragment {
                 ll_jianjie.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if(i%2==1){
+                        if (i % 2 == 1) {
                             iv_shang.setVisibility(View.GONE);
                             iv_xia.setVisibility(View.VISIBLE);
                             fu_tv_content.setVisibility(View.VISIBLE);
                             i++;
-                        }else {
+                        } else {
                             iv_shang.setVisibility(View.VISIBLE);
                             iv_xia.setVisibility(View.GONE);
                             fu_tv_content.setVisibility(View.GONE);
@@ -97,7 +99,7 @@ public class zhibofragment extends Fragment {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
+                Log.e("TAG", error.toString());
             }
         });
 

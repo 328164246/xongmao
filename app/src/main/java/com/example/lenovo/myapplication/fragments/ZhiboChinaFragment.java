@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.PopupWindow;
 
 import com.example.lenovo.myapplication.R;
@@ -45,7 +46,7 @@ public class ZhiboChinaFragment extends Fragment implements Iview<ZhiboChina> {
     private String url2;
     private String url4;
     private String url5;
-    private Button btn_add;
+    private ImageButton btn_add;
     private View inflate;
     private Button btn_quite;
     private View popwindow;

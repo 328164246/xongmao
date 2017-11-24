@@ -46,6 +46,6 @@ dependencies {
     compile 'com.android.support:design:26.+'
     compile 'com.bartoszlipinski:recyclerviewheader:1.2.1'
     compile 'org.greenrobot:eventbus:3.0.0'
-    compile 'fm.jiecao:jiecaovideoplayer:2.0'
+    compile 'fm.jiecao:jiecaovideoplayer:4.8.3'
     testCompile 'junit:junit:4.12'
 }
