@@ -25,11 +25,14 @@ public class RetrofitSetting {
             file.mkdir();
         }
 
-        Cache cache = new Cache(file, 4 * 1024 * 1024);
+        Cache cache = new Cache(file, 20 * 1024 * 1024);
         client = new OkHttpClient.Builder().cache(cache).build();
 
 
+
         retrofit = new Retrofit.Builder().baseUrl("http://www.baidu.com").addConverterFactory(GsonConverterFactory.create())
+                .client(client)
+
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create()).build();
     }
     public static RetrofitSetting getInstance(){

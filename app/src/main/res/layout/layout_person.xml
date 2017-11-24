@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    tools:context="com.example.lenovo.myapplication.view.PersonalActivity">
     <LinearLayout
         android:id="@+id/person_login"
         android:orientation="horizontal"
@@ -13,13 +14,14 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:background="#ffffff">
-        <ImageView
 
-            android:layout_weight="4"
+        <ImageView
+            android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@mipmap/personal_login_head"
-            />
+            android:layout_weight="4"
+            android:src="@mipmap/personal_login_head" />
+
         <TextView
             android:layout_weight="1"
             android:layout_width="match_parent"
@@ -125,6 +127,4 @@
 
 
 
-
 </LinearLayout>
-

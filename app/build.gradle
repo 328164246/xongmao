@@ -44,7 +44,8 @@ dependencies {
     compile 'com.alibaba:fastjson:1.2.39'
     compile 'com.squareup.okhttp3:okhttp:3.8.1'
     compile 'com.android.support:design:26.+'
-    testCompile 'junit:junit:4.12'
     compile 'com.bartoszlipinski:recyclerviewheader:1.2.1'
     compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'fm.jiecao:jiecaovideoplayer:2.0'
+    testCompile 'junit:junit:4.12'
 }

@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 
@@ -28,9 +29,10 @@ public abstract class BaseActivity extends Abstractactivity {
     private View header1;
     private View body1;
     private View footer1;
-    private Handler handler=new Handler();
+    private Handler handler = new Handler();
     private RelativeLayout footerview;
-  //设置显示头布局
+
+    //设置显示头布局
     public void setShowHeader(boolean showHeader) {
         isShowHeader = showHeader;
     }
@@ -62,7 +64,7 @@ public abstract class BaseActivity extends Abstractactivity {
 
     //设置错误布局显示
     protected void setShowErrorbody(boolean showErrorbody) {
-        setNoBody();
+       setNoBody();
         isShowErrorbody = showErrorbody;
     }
 
@@ -84,7 +86,8 @@ public abstract class BaseActivity extends Abstractactivity {
         setNoBody();
         isShowRefreshbody = showRefreshbody;
     }
-//----------------------------------------------------------------------------------------------------------------
+
+    //----------------------------------------------------------------------------------------------------------------
     //检查头布局
     public void checkHeader() {
         header1 = getHeader();
@@ -121,18 +124,26 @@ public abstract class BaseActivity extends Abstractactivity {
                 if (isShowGroundbody) {
                     Groundlayout.setVisibility(View.VISIBLE);
                     Groundlayout.addView(body1);
+                }else{
+                    Groundlayout.setVisibility(View.GONE);
                 }
                 if (isShowNoGroundbody) {
                     NoGroundlayout.setVisibility(View.VISIBLE);
                     NoGroundlayout.addView(body1);
+                }else{
+                    NoGroundlayout.setVisibility(View.GONE);
                 }
                 if (isShowRefreshbody) {
                     resfreshlayout.setVisibility(View.VISIBLE);
                     resfreshlayout.addView(body1);
+                }else{
+                    resfreshlayout.setVisibility(View.GONE);
                 }
                 if (isShowErrorbody) {
                     Errorlayout.setVisibility(View.VISIBLE);
                     Errorlayout.addView(body1);
+                }else{
+                    Errorlayout.setVisibility(View.GONE);
                 }
             }
         }
@@ -158,7 +169,7 @@ public abstract class BaseActivity extends Abstractactivity {
     }
 
 
-    //钩子函数
+
 
 
     @Override
@@ -174,12 +185,7 @@ public abstract class BaseActivity extends Abstractactivity {
         checkFooter();
         initviews();
         run();
-
-
-
     }
-
-
 
 
     private void initView() {
@@ -192,11 +198,11 @@ public abstract class BaseActivity extends Abstractactivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-               if(swipeview.isRefreshing()){
-                   swipeview.setRefreshing(false);
-               }
+                if (swipeview.isRefreshing()) {
+                    swipeview.setRefreshing(false);
+                }
             }
-        },200);
+        }, 200);
         Errorlayout = (RelativeLayout) findViewById(R.id.Errorlayout);
         bodyview = (RelativeLayout) findViewById(R.id.bodyview);
         footerview = (RelativeLayout) findViewById(R.id.footerview);

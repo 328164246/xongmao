@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
     <RelativeLayout
         android:id="@+id/headerview"
@@ -10,22 +9,25 @@
         android:layout_height="wrap_content" />
 
     <RelativeLayout
-        android:layout_above="@+id/footerview"
-        android:layout_below="@id/headerview"
         android:id="@+id/bodyview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/footerview"
+        android:layout_below="@id/headerview"
         android:orientation="vertical">
 
         <RelativeLayout
             android:id="@+id/NoGroundlayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:visibility="gone" />
 
         <ScrollView
             android:id="@+id/scrollview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            >
+
             <RelativeLayout
                 android:id="@+id/Groundlayout"
                 android:layout_width="match_parent"
@@ -35,7 +37,8 @@
         <android.support.v4.widget.SwipeRefreshLayout
             android:id="@+id/swipeview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            >
 
             <RelativeLayout
                 android:id="@+id/resfreshlayout"
@@ -44,9 +47,11 @@
         </android.support.v4.widget.SwipeRefreshLayout>
 
         <RelativeLayout
+
             android:id="@+id/Errorlayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:visibility="gone" />
     </RelativeLayout>
 
     <RelativeLayout

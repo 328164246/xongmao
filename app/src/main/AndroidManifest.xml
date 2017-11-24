@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.WRITE_APN_SETTINGS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -23,9 +24,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.Person" />
         <activity android:name=".view.Person_yuanchuang" />
-        <activity android:name=".view.Lishi"></activity>
+        <activity android:name=".view.Lishi" />
+        <activity android:name=".view.LoginActivity" />
+        <activity android:name=".view.PersonalActivity" />
+        <activity android:name=".view.Person_setActivity"></activity>
     </application>
 
 </manifest>

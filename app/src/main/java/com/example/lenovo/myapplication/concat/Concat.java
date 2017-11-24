@@ -15,4 +15,9 @@ public class Concat {
     public static final String TOTALTITLE="http://www.ipanda.com/kehuduan/PAGE1450172284887217/index.json";
     public static final String AIXUNMAO="http://www.ipanda.com/kehuduan/PAGE14501769230331752/index.json";
     public static final String LOOK_URL="http://newcomment.cntv.cn/comment/list?prepage=20&app=ipandaApp&itemid=zhiboye_chat&nature=1&page=";
+
+
+
+
+
 }

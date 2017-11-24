@@ -27,8 +27,11 @@ public class Person_yuanchuang extends BaseActivity implements Iview<Yuanchuang_
     @Override
     protected void initLayout() {
         setShowHeader(true);
+
+
+
         //可滚动的布局
-        setShowNoGroundbody(true);
+        setShowRefreshbody(true);
         setShowFooter(false);
 
     }
