@@ -47,7 +47,7 @@ public class Lishi extends BaseActivity {
         tb_img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Lishi.this,Person_total.class));
+                startActivity(new Intent(Lishi.this,Person_login.class));
             }
         });
 

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+
+        android:text="海外用户暂不支持手机注册，你可以使用邮箱注册"
+        android:textColor="#4772ae"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/stroke"
+        android:hint="账号:请输入手机号"
+        android:id="@+id/et_phone_name" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#f00"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/tv_add_name_prompt" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+
+            android:background="@drawable/stroke"
+            android:hint="请输入图片验证码"
+            android:id="@+id/et_phone_img" />
+        <ImageView
+            android:id="@+id/tv_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="5dp"
+            android:src="@mipmap/ic_launcher"/>
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#f00"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/tv_add_img_prompt" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+
+            android:background="@drawable/stroke"
+            android:hint="请输入验证码"
+            android:id="@+id/et_phone_yanzhenma" />
+        <Button
+            android:id="@+id/bt_phone_yan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="5dp"
+            android:background="#0000ff"
+            android:textColor="#fff"
+            android:text="获取验证码"
+            />
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#f00"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/tv_add_ma_prompt" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/stroke"
+        android:hint="请输入密码"
+        android:id="@+id/et_phone_paw" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#f00"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/tv_add_paw_prompt" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="我已阅读并同意《央视网网络服务使用协议》"
+        android:id="@+id/checkBox"
+        android:textColor="#4772ae"
+        android:checked="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0000ff"
+        android:text="注册"
+
+        android:layout_margin="15dp"
+        android:textColor="#fff"
+        android:id="@+id/bt_phone_login"
+        />
+
+
+</LinearLayout>

@@ -27,11 +27,12 @@
         <activity android:name=".view.Person_yuanchuang" />
         <activity android:name=".view.Lishi" />
         <activity android:name=".view.LoginActivity" />
-        <activity android:name=".view.Person_setActivity" />
-        <activity android:name=".view.Person_total" />
+        <activity android:name=".view.Person_set" />
+        <activity android:name=".view.Person_login" />
         <activity android:name=".view.Person_shoucang" />
-        <activity android:name=".view.ClickVideoActivity"></activity>
-        <activity android:name=".view.Person_find"/>
+        <activity android:name=".view.ClickVideoActivity" />
+        <activity android:name=".view.Person_find" />
+        <activity android:name=".view.Person_zhuceActivity"></activity>
     </application>
 
 </manifest>

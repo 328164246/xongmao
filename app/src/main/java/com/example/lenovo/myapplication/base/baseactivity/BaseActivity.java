@@ -195,14 +195,14 @@ public abstract class BaseActivity extends Abstractactivity {
         scrollview = (ScrollView) findViewById(R.id.scrollview);
         resfreshlayout = (RelativeLayout) findViewById(R.id.resfreshlayout);
         swipeview = (SwipeRefreshLayout) findViewById(R.id.swipeview);
-        handler.postDelayed(new Runnable() {
+      /*  handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 if (swipeview.isRefreshing()) {
                     swipeview.setRefreshing(false);
                 }
             }
-        }, 200);
+        }, 200);*/
         Errorlayout = (RelativeLayout) findViewById(R.id.Errorlayout);
         bodyview = (RelativeLayout) findViewById(R.id.bodyview);
         footerview = (RelativeLayout) findViewById(R.id.footerview);

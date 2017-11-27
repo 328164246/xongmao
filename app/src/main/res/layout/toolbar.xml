@@ -7,7 +7,7 @@
         android:id="@+id/tb_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/fenlei_fanhui"
+        android:src="@drawable/fenlei_fanhui"
       />
 
     <TextView

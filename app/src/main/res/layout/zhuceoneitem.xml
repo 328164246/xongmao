@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+
+        android:text="邮箱注册需要激活后才能登录"
+        android:textColor="#4772ae" />
+
+    <EditText
+        android:id="@+id/et_mail_name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/stroke"
+        android:hint="账号:请输入邮箱" />
+
+    <TextView
+        android:id="@+id/tv_mail_name_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="15dp"
+        android:textColor="#f00" />
+
+
+    <EditText
+        android:id="@+id/et_mail_paw"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/stroke"
+        android:hint="请输入密码" />
+
+    <TextView
+        android:id="@+id/tv_mail_paw_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="15dp"
+        android:textColor="#f00" />
+
+    <EditText
+        android:id="@+id/et_mail_paw2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/stroke"
+        android:hint="请再次输入密码" />
+
+    <TextView
+        android:id="@+id/tv_mail_paw_prompt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="15dp"
+        android:textColor="#f00" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_mail_img"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+
+            android:layout_weight="4"
+            android:background="@drawable/stroke"
+            android:hint="请输入图片验证码" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/iv_mail_img" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_add_img_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="15dp"
+        android:textColor="#f00" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="我已阅读并同意《央视网网络服务使用协议》"
+        android:id="@+id/checkBox"
+        android:textColor="#4772ae"
+        android:checked="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#666666"
+        android:text="注册"
+        android:layout_margin="15dp"
+        android:textColor="#fff"
+        android:id="@+id/bt_mail_add"
+        />
+
+</LinearLayout>

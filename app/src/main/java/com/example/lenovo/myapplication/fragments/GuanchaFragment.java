@@ -44,23 +44,26 @@ public class GuanchaFragment extends Fragment implements Iview<Guancha> {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        //网络请求
         Ipresenter ipresenter = new Ipresenter(this);
-        ipresenter.getData(Concat.GUANCHAPANADA,null);
+        ipresenter.getData(Concat.GUANCHAPANADA, null);
+        //添加布局
         View inflate = inflater.inflate(R.layout.guanchaitem, container, false);
-        guancha_header_img = inflate.findViewById(R.id.guancha_header_img);
+        guancha_header_img = inflate.findViewById(R.id.guancha_header_img);//网络请求
         VolleyUtils.getInstance(getContext()).get(Concat.TOTALTITLE, new Response.Listener<String>() {
             @Override
+
+
             public void onResponse(String response) {
                 String s = response.toString();
                 TotalGuancha totalGuancha = new Gson().fromJson(s, TotalGuancha.class);
                 String image = totalGuancha.getTab().get(1).getImage();
-
-               Glide.with(getContext()).load(image).into(guancha_header_img);
+                Glide.with(getContext()).load(image).into(guancha_header_img);
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-      Log.e("TAG",error.toString());
+                Log.e("TAG", error.toString());
             }
         });
         guancha_lv = inflate.findViewById(R.id.guancha_lv);
@@ -80,13 +83,12 @@ public class GuanchaFragment extends Fragment implements Iview<Guancha> {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String guid = guanchalist.get(i).getGuid();
-                Intent intent = new Intent(getActivity(),ClickVideoActivity.class);
-                intent.putExtra("id",guid);
+                Intent intent = new Intent(getActivity(), ClickVideoActivity.class);
+                intent.putExtra("id", guid);
                 startActivity(intent);
             }
         });
     }
-
 
 
     @Override
